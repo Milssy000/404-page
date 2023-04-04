@@ -9,20 +9,24 @@
   --lit-header: #e6e6e6;
   --speed: 2s;
 }
+
 * {
   box-sizing: border-box;
   transform-style: preserve-3d;
 }
+
 @property --swing-x {
   initial-value: 0;
   inherits: false;
   syntax: '<integer>';
 }
+
 @property --swing-y {
   initial-value: 0;
   inherits: false;
   syntax: '<integer>';
 }
+
 body {
   min-height: 100vh;
   display: flex;
@@ -34,6 +38,7 @@ body {
   color: var(--color);
   perspective: 1200px;
 }
+
 a {
   text-transform: uppercase;
   text-decoration: none;
@@ -44,10 +49,12 @@ a {
   font-size: 0.875rem;
   letter-spacing: 0.05rem;
 }
+
 p {
   font-weight: 80;
 
 }
+
 h1 {
   animation: swing var(--speed) infinite alternate ease-in-out;
   font-size: clamp(5rem, 40vmin, 20rem);
@@ -61,6 +68,7 @@ h1 {
   -webkit-background-clip: text;
   color: transparent;
 }
+
 h1:after {
   animation: swing var(--speed) infinite alternate ease-in-out;
   content: "404";
@@ -71,6 +79,7 @@ h1:after {
   filter: blur(1.5vmin);
   transform: scale(1.05) translate3d(0, 12%, -10vmin) translate(calc((var(--swing-x, 0) * 0.05) * 1%), calc((var(--swing-y) * 0.05) * 1%));
 }
+
 .cloak {
   animation: swing var(--speed) infinite alternate-reverse ease-in-out;
   height: 100%;
@@ -79,6 +88,7 @@ h1:after {
   transform: rotate(calc(var(--swing-x) * -0.25deg));
   background: radial-gradient(30% 40% at 50% 42%, transparent, #810019 70%);
 }
+
 .cloak__wrapper {
   position: fixed;
   top: 0;
@@ -87,6 +97,7 @@ h1:after {
   right: 0;
   overflow: hidden;
 }
+
 .cloak__container {
   height: 250vmax;
   width: 250vmax;
@@ -95,61 +106,77 @@ h1:after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .info {
   text-align: center;
   line-height: 1.5;
   max-width: clamp(16rem, 90vmin, 25rem);
 }
+
 .info > p {
   margin-bottom: 3rem;
 }
+
 @-moz-keyframes swing {
   0% {
     --swing-x: -100;
     --swing-y: -100;
   }
+  
   50% {
     --swing-y: 0;
   }
+  
   100% {
     --swing-y: -100;
     --swing-x: 100;
   }
+  
 }
+
 @-webkit-keyframes swing {
   0% {
     --swing-x: -100;
     --swing-y: -100;
   }
+  
   50% {
     --swing-y: 0;
   }
+  
   100% {
     --swing-y: -100;
     --swing-x: 100;
   }
 }
+
 @-o-keyframes swing {
   0% {
     --swing-x: -100;
     --swing-y: -100;
   }
+  
   50% {
     --swing-y: 0;
   }
+  
   100% {
     --swing-y: -100;
     --swing-x: 100;
   }
+  
 }
+
 @keyframes swing {
   0% {
     --swing-x: -100;
     --swing-y: -100;
   }
+  
   50% {
     --swing-y: 0;
   }
+  
   100% {
     --swing-y: -100;
     --swing-x: 100;
